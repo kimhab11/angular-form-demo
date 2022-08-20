@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {FormControl} from "@angular/forms";
 
 @Component({
   selector: 'app-reactive-form',
@@ -6,8 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./reactive-form.component.css']
 })
 export class ReactiveFormComponent implements OnInit {
+  title = new FormControl('');
 
   constructor() { }
+  updateTitle(){
+    this.title.setValue('kimhab');
+  }
 
   ngOnInit(): void {
   }
