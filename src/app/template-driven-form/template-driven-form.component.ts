@@ -10,7 +10,7 @@ export class TemplateDrivenFormComponent implements OnInit {
   email?:string
   password?:string // just ex not real
 
-  form:any
+  loginForm:any
 
   constructor() { }
 
@@ -18,7 +18,8 @@ export class TemplateDrivenFormComponent implements OnInit {
   }
 
   onLogin(form:any): void {
-    this.form=form
+
+    this.loginForm=form
     console.log(form)
     console.log(form.value)
   }

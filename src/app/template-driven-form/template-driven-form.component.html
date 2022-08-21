@@ -4,9 +4,11 @@
 
   <div class="mb-6">
     <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Your email</label>
-    <input required [(ngModel)]="email" type="email" id="email" name="email"
+    <input required [ngModel]="email" type="email" id="email" name="email"
            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-           placeholder="name@flowbite.com" >
+           placeholder="name@flowbite.com" #email="ngModel">
+
+    <div *ngIf="email.errors?.['required']">Failed</div>
 
   </div>
 
@@ -15,7 +17,8 @@
       password</label>
     <input [ngModel]="password" type="password" id="password" name="password"
            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-           required="">
+           required #password="ngModel">
+
   </div>
 
   <button type="submit" [disabled]="loginForm.status=='INVALID'"
@@ -27,9 +30,9 @@
 
 <div class="p-8 bg-blue-200 m-2">
   <p>Value from form : </p>
-  <p>{{this.form?.value['email']}}</p>
-  <p>{{this.form?.value.password}}</p>
-  <p>{{form?.value | json }}</p>
+  <p>{{this.loginForm?.value['email']}}</p>
+  <p>{{this.loginForm?.value.password}}</p>
+<!--  <p>{{form?.value | json }}</p>-->
   <p>{{loginForm.status}}</p>
 </div>
 
