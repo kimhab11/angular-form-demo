@@ -7,11 +7,12 @@ import {FormControl} from "@angular/forms";
   styleUrls: ['./reactive-form.component.css']
 })
 export class ReactiveFormComponent implements OnInit {
-  title = new FormControl('');
+  name = new FormControl('');
+  email = new FormControl('email'); // hold value = email
 
   constructor() { }
   updateTitle(){
-    this.title.setValue('kimhab');
+    this.name.setValue('kimhab');  // update to kimhab
   }
 
   ngOnInit(): void {

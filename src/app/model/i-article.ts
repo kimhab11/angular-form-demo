@@ -1,5 +1,5 @@
-export interface IArticle {
-  title:string
-  description:string
-  status?:boolean
-}
+// export interface IArticle {
+//   title:string
+//   description:string
+//   status?:boolean
+// }
